@@ -1,0 +1,193 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.projeto.musica1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author 202301095701
+ */
+public class ProjetoMusica1 {
+    static ArrayList<Aula> aulas = new ArrayList<>();
+    static ArrayList<Usuario> usuarios = new ArrayList<>();
+    
+    public static void main(String[] args) {
+        // Criando um ArrayList para armazenar as aulas
+
+        
+        String nome = "";
+        String descricao = "";
+        int duracao = 0;
+        
+        String username;
+        String senha;
+       
+        int teste = 0;
+            while (teste == 0) {
+                System.out.println("1- voce é um  professor? 2- voce é um aluno? 3-encerrar");
+
+                Scanner scanner = new Scanner(System.in);
+                int cursor = scanner.nextInt();
+                
+                if (cursor >= 4 || cursor <= 0) {
+                    System.out.println("Tente De novo");
+                }
+                
+                if (cursor == 3 ) {
+                    System.out.println("Encerrou");
+                       System.exit(0);
+                }
+                
+                if (cursor == 1){
+                    System.out.println("Voce é um professor!");
+
+                    TelaLoginProfessor metodo = new TelaLoginProfessor();
+                    metodo.telaloginprof(aulas,usuarios);
+                }
+                
+                if (cursor == 2){
+                    System.out.println("Voce é um aluno!");
+
+                    TelaLoginAluno metodo = new TelaLoginAluno();
+                    metodo.telaloginaluno(aulas,usuarios);
+                }                
+                
+            }
+            int teste1 = 0;
+            while (teste1 == 0) {
+                System.out.println("1- Login 2- Cadastrar 3- Sair");
+
+                Scanner scanner = new Scanner(System.in);
+                int cursor = scanner.nextInt();
+
+                if (cursor >= 4 || cursor <= 0) {
+                    System.out.println("Tente De novo");
+                }
+
+                if (cursor == 3) {
+                    teste = 1;
+                }
+
+                if (cursor == 2){
+                    System.out.println("Nome:");
+                    nome = scanner.next();
+
+                    System.out.println("Username: ");
+                    username = scanner.next();
+
+                    System.out.println("Senha:");
+                    senha = scanner.next();
+
+                    usuarios.add(new Usuario(nome,username,senha));
+                }
+
+                if (cursor == 1) {
+                    System.out.println("Username: ");
+                    username = scanner.next();
+
+                    System.out.println("Senha:");
+                    senha = scanner.next();
+
+                    boolean loggedIn = false;
+                    for (Usuario usuario : usuarios) {
+                        if (usuario.getUsername().equals(username) && usuario.getSenha().equals(senha)) {
+                            loggedIn = true;
+                            System.out.println("Login bem-sucedido!");
+
+                            FoiLogado metodo = new FoiLogado();
+                            //metodo.telaaluno();
+                        }
+                    }
+
+                    if (!loggedIn) {
+                        System.out.println("Falha no login. Tente novamente.");
+                    }
+                }
+            }
+    }
+    
+    
+    public void telaloginprof() {
+        
+        Aula aula1 = new Aula("Aula 1","asasas",2);
+        Aula aula2 = new Aula("Aula 2","asasas",2);
+        
+        aulas.add(aula1);
+        aulas.add(aula2);
+        
+        Usuario Vinicius = new Usuario("Vinicius","vini","123");
+        Usuario Pinicius = new Usuario("Pinicius","pini","123");
+        
+        usuarios.add(Vinicius);
+        usuarios.add(Pinicius);
+        
+        Vinicius.addAula(aula1);
+        Pinicius.addAula(aula2);
+
+        Vinicius.listar();
+            
+        String nome = "";
+        String descricao = "";
+        int duracao = 0;
+        
+        String username;
+        String senha;
+       
+            int teste = 0;
+            while (teste == 0) {
+                System.out.println("1- Login 2- Cadastrar 3- Sair");
+
+                Scanner scanner = new Scanner(System.in);
+                int cursor = scanner.nextInt();
+
+                if (cursor >= 4 || cursor <= 0) {
+                    System.out.println("Tente De novo");
+                }
+
+                if (cursor == 3) {
+                    teste = 1;
+                }
+
+                if (cursor == 2){
+                    System.out.println("Nome:");
+                    nome = scanner.next();
+
+                    System.out.println("Username: ");
+                    username = scanner.next();
+
+                    System.out.println("Senha:");
+                    senha = scanner.next();
+
+                    usuarios.add(new Usuario(nome,username,senha));
+                }
+
+                if (cursor == 1) {
+                    System.out.println("Username: ");
+                    username = scanner.next();
+
+                    System.out.println("Senha:");
+                    senha = scanner.next();
+
+                    boolean loggedIn = false;
+                    for (Usuario usuario : usuarios) {
+                        if (usuario.getUsername().equals(username) && usuario.getSenha().equals(senha)) {
+                            loggedIn = true;
+                            System.out.println("Login bem-sucedido!");
+
+                            FoiLogado metodo = new FoiLogado();
+//                            metodo.telaprof();
+                        }
+                    }
+
+                    if (!loggedIn) {
+                        System.out.println("Falha no login. Tente novamente.");
+                    }
+                }
+        }
+    }
+}
+
