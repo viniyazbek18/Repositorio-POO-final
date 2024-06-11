@@ -22,6 +22,7 @@ public class ProjetoMusica1 {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;
@@ -113,8 +114,8 @@ public class ProjetoMusica1 {
     
     public void telaloginprof() {
         
-        Aula aula1 = new Aula("Aula 1","asasas",2);
-        Aula aula2 = new Aula("Aula 2","asasas",2);
+        Aula aula1 = new Aula("Aula 1","asasas",2,"www.1");
+        Aula aula2 = new Aula("Aula 2","asasas",2,"www.2");
         
         aulas.add(aula1);
         aulas.add(aula2);
@@ -133,6 +134,7 @@ public class ProjetoMusica1 {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;

@@ -4,9 +4,6 @@
  */
 package com.mycompany.projeto.musica1;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  *
  * @author 202301095701
@@ -15,12 +12,14 @@ public class Aula {
     private String titulo;
     private String descricao;
     private int duracao;
-
+    private String link1;
+    
     // Construtor
-    public Aula(String titulo, String descricao, int duracao) {
+    public Aula(String titulo, String descricao, int duracao,String link1) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.duracao = duracao;
+        this.link1= link1;        
     }
     
     // Getter para o título
@@ -52,4 +51,14 @@ public class Aula {
     public void setDuracao(int duracao) {
         this.duracao = duracao;
     }
+        // Getter para o título
+    public String getLink1() {
+        return link1;
+    }
+
+    // Setter para o título
+    public void setLink1(String link1) {
+        this.link1 = link1;
+    }
+    
 }

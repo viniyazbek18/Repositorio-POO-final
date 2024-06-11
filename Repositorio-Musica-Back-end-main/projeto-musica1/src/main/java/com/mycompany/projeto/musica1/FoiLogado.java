@@ -4,159 +4,171 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // Classe principal
-public class FoiLogado{
-    
-    public void Aula(){
-        
+public class FoiLogado {
+
+    public void Aula() {
+
     }
+
     public void telaprof(ArrayList<Aula> a, ArrayList<Usuario> b) {
         String nome = "";
         String descricao = "";
         int duracao = 0;
-        
+        String link1 = "";
+
         String username;
         String senha;
-       
+
         int teste = 0;
         while (teste == 0) {
             System.out.println("1- Adicionar Aula 2- Listar Aula 3- Listar Alunos 4- Sair");
-                                
+
             Scanner scanner = new Scanner(System.in);
             int cursor = scanner.nextInt();
-            
+
             if (cursor >= 5 || cursor <= 0) {
                 System.out.println("Tente De novo");
             }
-            
+
             if (cursor == 4) {
                 teste = 1;
             }
-            
+
             if (cursor == 1) {
                 System.out.println("Escreve o Titulo");
                 nome = scanner.next();
-                
+
                 System.out.println("Descreve a aula");
                 descricao = scanner.next();
-                
+
                 System.out.println("Da a Duracao");
                 duracao = scanner.nextInt();
-  
-                a.add(new Aula(nome,descricao,duracao));
+
+                System.out.println("Escreve o link da aula");
+                link1 = scanner.next();
+
+                a.add(new Aula(nome, descricao, duracao, link1));
             }
-            
+
             if (cursor == 2) {
-               for (int x = 0 ; x < a.size() ; x++) {
+                for (int x = 0; x < a.size(); x++) {
                     System.out.println(a.get(x).getTitulo());
-                } 
+                }
             }
-            
+
             if (cursor == 3) {
-                for (int x = 0 ; x < b.size() ; x++) {
+                for (int x = 0; x < b.size(); x++) {
                     System.out.println(b.get(x).getNome());
                 }
             }
         }
     }
-    
+
     public void telaaluno(ArrayList<Aula> a, ArrayList<Usuario> b) {
         String nome = "";
         String descricao = "";
         int duracao = 0;
-        
+        String link1 = "";
+
         String username;
         String senha;
-       
+
         int teste = 0;
         while (teste == 0) {
-            System.out.println("1- Listar Aula 2- Sair");
-                                
+            System.out.println("1- Listar Aula 2- Praticar instrumento/Link das aulas ordenadamente  3- Sair");
             Scanner scanner = new Scanner(System.in);
             int cursor = scanner.nextInt();
-            
-            if (cursor >= 3 || cursor <= 0) {
+
+            if (cursor >= 4 || cursor <= 0) {
                 System.out.println("Tente De novo");
             }
-            
-            if (cursor == 2) {
+
+            if (cursor == 3) {
                 teste = 1;
             }
-            
+
             if (cursor == 1) {
-               for (int x = 0 ; x < a.size() ; x++) {
+                for (int x = 0; x < a.size(); x++) {
                     System.out.println(a.get(x).getTitulo());
-                } 
-            }
-        }
+                }
+            } 
+            if (cursor == 2) {
+                for (int x = 0; x < a.size(); x++) {
+                    System.out.println(a.get(x).getLink1());
+                }
+            }   
     }
-    
-    
+}
+
     public static void main(String[] args) {
         // Criando um ArrayList para armazenar as aulas
         ArrayList<Aula> aulas = new ArrayList<>();
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        
-        Aula aula1 = new Aula("Aula 1","asasas",2);
-        Aula aula2 = new Aula("Aula 2","asasas",2);
-        
+
+        Aula aula1 = new Aula("Aula 1", "asasas", 2, "www.1");
+        Aula aula2 = new Aula("Aula 2", "asasas", 2, "www.2");
+
         aulas.add(aula1);
         aulas.add(aula2);
-        
-        Usuario Vinicius = new Usuario("Vinicius","vini","123");
-        Usuario Pinicius = new Usuario("Pinicius","pini","123");
-        
+
+        Usuario Vinicius = new Usuario("Vinicius", "vini", "123");
+        Usuario Pinicius = new Usuario("Pinicius", "pini", "123");
+
         usuarios.add(Vinicius);
         usuarios.add(Pinicius);
-        
+
         Vinicius.addAula(aula1);
         Pinicius.addAula(aula2);
 
         Vinicius.listar();
-        
-        
+
         String nome = "";
         String descricao = "";
         int duracao = 0;
-        
+        String link1 = "";
+
         String username;
         String senha;
-       
+
         int teste = 0;
         while (teste == 0) {
             System.out.println("1- Adicionar Aula 2- Listar Aula 3- Listar Alunos 4- Sair");
-                                
+
             Scanner scanner = new Scanner(System.in);
             int cursor = scanner.nextInt();
-            
+
             if (cursor >= 5 || cursor <= 0) {
                 System.out.println("Tente De novo");
             }
-            
+
             if (cursor == 4) {
                 teste = 1;
             }
-            
+
             if (cursor == 1) {
                 System.out.println("Escreve o Titulo");
                 nome = scanner.next();
-                
+
                 System.out.println("Descreve a aula");
                 descricao = scanner.next();
-                
+
                 System.out.println("Da a Duracao");
                 duracao = scanner.nextInt();
-  
-                aulas.add(new Aula(nome,descricao,duracao));
+
+                System.out.println("Escreve o link da aula");
+                link1 = scanner.next();
+
+                aulas.add(new Aula(nome, descricao, duracao, link1));
             }
-            
+
             if (cursor == 2) {
-               for (int x = 0 ; x < aulas.size() ; x++) {
+                for (int x = 0; x < aulas.size(); x++) {
                     System.out.println(aulas.get(x).getTitulo());
-                } 
+                }
             }
-            
+
             if (cursor == 3) {
-                for (int x = 0 ; x < usuarios.size() ; x++) {
+                for (int x = 0; x < usuarios.size(); x++) {
                     System.out.println(usuarios.get(x).getNome());
                 }
             }

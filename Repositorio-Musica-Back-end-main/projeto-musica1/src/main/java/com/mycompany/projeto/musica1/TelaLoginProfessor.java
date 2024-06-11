@@ -16,8 +16,8 @@ public class TelaLoginProfessor extends ProjetoMusica1 {
         
         public void telaloginprof(ArrayList<Aula> a, ArrayList<Usuario> b) {
         
-        Aula aula1 = new Aula("Aula 1","asasas",2);
-        Aula aula2 = new Aula("Aula 2","asasas",2);
+        Aula aula1 = new Aula("Aula 1","asasas",2,"www.1");
+        Aula aula2 = new Aula("Aula 2","asasas",2,"www.2");
         
         a.add(aula1);
         a.add(aula2);
@@ -36,6 +36,7 @@ public class TelaLoginProfessor extends ProjetoMusica1 {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;
@@ -99,6 +100,7 @@ public class TelaLoginProfessor extends ProjetoMusica1 {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;

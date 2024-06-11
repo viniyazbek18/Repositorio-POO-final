@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class TelaLoginAluno {
     public void telaloginaluno(ArrayList<Aula> a, ArrayList<Usuario> b) {
         
-        Aula aula1 = new Aula("Aula 1","asasas",2);
-        Aula aula2 = new Aula("Aula 2","asasas",2);
+        Aula aula1 = new Aula("Aula 1","asasas",2,"www.1");
+        Aula aula2 = new Aula("Aula 2","asasas",2,"www.2");
         
         a.add(aula1);
         a.add(aula2);
@@ -35,6 +35,7 @@ public class TelaLoginAluno {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;
@@ -98,6 +99,7 @@ public class TelaLoginAluno {
         String nome = "";
         String descricao = "";
         int duracao = 0;
+        String link1="";
         
         String username;
         String senha;

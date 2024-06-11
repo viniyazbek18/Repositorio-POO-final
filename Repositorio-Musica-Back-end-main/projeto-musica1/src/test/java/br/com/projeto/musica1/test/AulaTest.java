@@ -17,7 +17,7 @@ public class AulaTest {
     Aula aulas = null;
     
     public AulaTest() {
-        aulas = new Aula("Aula 1","asasas",2);
+        aulas = new Aula("Aula 1","asasas",2,"www.1");
     }
 
     @Test
@@ -34,4 +34,10 @@ public class AulaTest {
     public void AulaTestDuracao() {
         assertEquals(2, aulas.getDuracao());
     }
+    
+    @Test
+    public void Aula2TestLink1() {
+        assertEquals("www.1", aulas.getLink1());
+    }
+    
 }
